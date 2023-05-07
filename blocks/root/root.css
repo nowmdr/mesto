@@ -1,0 +1,14 @@
+.root {
+    font-family: 'Inter', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--black-color);
+    margin: 0 auto;
+    max-width: var(--container);
+}
+
+@media screen and (max-width: 1318px)  {
+    .root {
+        margin: 0 var(--container-spacing);
+    }
+}
