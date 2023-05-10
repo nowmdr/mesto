@@ -7,7 +7,7 @@
     max-width: var(--container);
 }
 
-@media screen and (max-width: 1318px)  {
+@media screen and (max-width: 918px)  {
     .root {
         margin: 0 var(--container-spacing);
     }

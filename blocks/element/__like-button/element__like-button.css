@@ -1,0 +1,7 @@
+.element__like-button {
+    border: 0;
+    padding: 0;
+    background-color: var(--white-color);
+    cursor: pointer;
+    height: 19px;
+}
