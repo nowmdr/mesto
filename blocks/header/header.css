@@ -4,6 +4,13 @@
     border-bottom: 1px solid rgba(84, 84, 84, 0.7);
 }
 
+@media screen and (max-width: 767px)  {
+    .header {
+        padding-top: 28px;
+        padding-bottom: 32px;
+    }
+}
+
 @media screen and (min-width: 1280px) {
     .header {
         /*max-width: var(--x-large-container);*/
