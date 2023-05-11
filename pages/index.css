@@ -23,6 +23,15 @@
 @import "../blocks/element/__info/element__info.css";
 @import "../blocks/element/__title/element__title.css";
 @import "../blocks/element/__like-button/element__like-button.css";
+@import "../blocks/element/__like-button/_active/element__like-button_active.css";
+/*popup*/
+@import "../blocks/popup/popup.css";
+@import "../blocks/popup/_opened/popup_opened.css";
+@import "../blocks/popup/__form/popup__form.css";
+@import "../blocks/popup/__title/popup__title.css";
+@import "../blocks/popup/__input/popup__input.css";
+@import "../blocks/popup/__send-button/popup__send-button.css";
+@import "../blocks/popup/__close-button/popup__close-button.css";
 /*footer*/
 @import "../blocks/footer/footer.css";
 @import "../blocks/footer/__copyright/footer__copyright.css";

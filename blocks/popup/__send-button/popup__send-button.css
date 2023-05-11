@@ -1,0 +1,25 @@
+.popup__send-button {
+    background-color: var(--black-color);
+    color: var(--white-color);
+    border: none;
+    padding: 14px 0;
+    margin-top: 48px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: opacity 0.2s ease;
+}
+
+.popup__send-button:hover {
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 767px) {
+    .popup__send-button {
+        font-size: 14px;
+        line-height: 17px;
+    }
+}

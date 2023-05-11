@@ -5,12 +5,17 @@
     width: 24px;
     height: 24px;
     border: 1px solid var(--white-color);
-    background: var(--black-color);
+    background: var(--black-color) url("../../../images/icons/edit-icon.svg") no-repeat center center;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
     cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.profile__edit-button:hover {
+    opacity: 0.6;
 }
 
 @media screen and (max-width: 767px)  {
