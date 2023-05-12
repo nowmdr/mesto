@@ -1,17 +1,17 @@
 .profile__edit-button {
-    position: absolute;
-    right: -43px;
-    top: 14px;
     width: 24px;
     height: 24px;
     border: 1px solid var(--white-color);
-    background: var(--black-color) url("../../../images/icons/edit-icon.svg") no-repeat center center;
+    background: transparent url("../../../images/icons/edit-icon.svg") no-repeat center center;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
     cursor: pointer;
     transition: opacity 0.2s ease;
+    order: 2;
+    align-self: center;
+    margin-top: 5px;
 }
 
 .profile__edit-button:hover {

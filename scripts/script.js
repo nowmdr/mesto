@@ -29,9 +29,5 @@ editBtn.addEventListener('click', () => {
     getValue();
     togglePopup();
 });
-popupCloseBtn.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    togglePopup();
-});
-
+popupCloseBtn.addEventListener('click', togglePopup);
 popupForm.addEventListener('submit', handleFormSubmit);

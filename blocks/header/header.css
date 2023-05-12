@@ -2,21 +2,20 @@
     padding-top: 45px;
     padding-bottom: 41px;
     position: relative;
+    max-width: var(--container);
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
 }
 
-.header::after {
-    position: absolute;
-    content: '';
-    height: 1px;
-    width: 100%;
-    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
-    bottom: 0;
+@media screen and (max-width: 918px) and (min-width: 768px) {
+    .header {
+        margin: 0 var(--container-spacing);
+    }
 }
 
 @media screen and (max-width: 767px)  {
     .header {
-        padding-top: 28px;
-        padding-bottom: 32px;
+        padding: 28px var(--container-spacing) 32px;
     }
 
     .header::after {

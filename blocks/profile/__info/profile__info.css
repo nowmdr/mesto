@@ -1,10 +1,17 @@
 .profile__info {
-    position: relative;
     max-width: 340px;
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    grid-template-rows: auto;
+    row-gap: 16px;
+    column-gap: 18px;
 }
 
 @media screen and (max-width: 767px) {
     .profile__info {
-        max-width: 75%;
+        max-width: 80%;
+        row-gap: 14px;
+        column-gap: 10px;
+        margin-left: 28px;
     }
 }
