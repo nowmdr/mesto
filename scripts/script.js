@@ -3,8 +3,8 @@ const popupForm = document.querySelector('.popup__form');
 const popupCloseBtn = popup.querySelector('.popup__close-button');
 const nameInput = document.querySelector('.popup__input[name="profile-name"]');
 const subtitleInput = document.querySelector('.popup__input[name="profile-subtitle"]');
-let name = document.querySelector('.profile__name');
-let subtitle = document.querySelector('.profile__subtitle');
+const name = document.querySelector('.profile__name');
+const subtitle = document.querySelector('.profile__subtitle');
 const editBtn = document.querySelector('.profile__edit-button');
 
 function getValue () {

@@ -11,3 +11,10 @@
         margin: 0 var(--container-spacing);
     }
 }
+
+@media screen and (max-width: 767px)  {
+    .footer {
+        padding-top: 48px;
+        padding-bottom: 36px;
+    }
+}

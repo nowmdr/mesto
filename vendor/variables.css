@@ -1,21 +1,10 @@
 :root {
   /*colors*/
   --black-color: #000000;
-  --gray-color: #cccccc;
+  --gray-color: #545454;
   --dark-gray-color: #2A2C2F;
   --white-color: #ffffff;
   /*containers*/
   --container: 880px;
   --container-spacing: 19px;
 }
-/*@media screen and (min-width: 768px) and (max-width: 1023px) {*/
-/*  :root {*/
-/*    --container-spacing: 24px;*/
-/*  }*/
-/*}*/
-
-/*@media screen and (max-width: 767px)  {*/
-/*  :root {*/
-/*    --container-spacing: 16px;*/
-/*  }*/
-/*}*/

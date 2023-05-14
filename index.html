@@ -14,13 +14,13 @@
     </header>
     <main class="content">
         <section class="profile">
-            <img src="../mesto/images/profile-image.jpg" alt="Жак-Ив Кусто" class="profile__avatar">
+            <img src="./images/profile-image.jpg" alt="Жак-Ив Кусто" class="profile__avatar">
             <div class="profile__info">
                 <h1 class="profile__name">Жак-Ив Кусто</h1>
                 <p class="profile__subtitle">Исследователь океана</p>
-                <button type="button" class="profile__edit-button"></button>
+                <button aria-label="Edit profile button" type="button" class="profile__edit-button"></button>
             </div>
-            <button type="button" class="profile__add-button"></button>
+            <button aria-label="Add button" type="button" class="profile__add-button"></button>
         </section>
         <section class="elements">
             <ul class="elements__list">
@@ -28,42 +28,42 @@
                     <img src="./images/cards/kirill-pershin-1088404-unsplash.png" alt="Карачаевск" class="element__image">
                     <div class="element__info">
                         <h2 class="element__title">Карачаевск</h2>
-                        <button type="button" class="element__like-button element__like-button_active"></button>
+                        <button aria-label="Like button" type="button" class="element__like-button element__like-button_active"></button>
                     </div>
                 </li>
                 <li class="element">
                     <img src="./images/cards/kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус" class="element__image">
                     <div class="element__info">
                         <h2 class="element__title">Гора Эльбрус</h2>
-                        <button type="button" class="element__like-button"></button>
+                        <button aria-label="Like button" type="button" class="element__like-button"></button>
                     </div>
                 </li>
                 <li class="element">
                     <img src="./images/cards/kirill-pershin-1556355-unsplash.png" alt="Домбай" class="element__image">
                     <div class="element__info">
                         <h2 class="element__title">Домбай</h2>
-                        <button type="button" class="element__like-button"></button>
+                        <button aria-label="Like button" type="button" class="element__like-button"></button>
                     </div>
                 </li>
                 <li class="element">
                     <img src="./images/cards/kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус" class="element__image">
                     <div class="element__info">
                         <h2 class="element__title">Гора Эльбрус</h2>
-                        <button type="button" class="element__like-button"></button>
+                        <button aria-label="Like button" type="button" class="element__like-button"></button>
                     </div>
                 </li>
                 <li class="element">
                     <img src="./images/cards/kirill-pershin-1088404-unsplash.png" alt="Карачаево" class="element__image">
                     <div class="element__info">
                         <h2 class="element__title">Карачаево-Ч...</h2>
-                        <button type="button" class="element__like-button"></button>
+                        <button aria-label="Like button" type="button" class="element__like-button"></button>
                     </div>
                 </li>
                 <li class="element">
                     <img src="./images/cards/kirill-pershin-1556355-unsplash.png" alt="Домбай" class="element__image">
                     <div class="element__info">
                         <h2 class="element__title">Домбай</h2>
-                        <button type="button" class="element__like-button"></button>
+                        <button aria-label="Like button" type="button" class="element__like-button"></button>
                     </div>
                 </li>
             </ul>
@@ -82,7 +82,7 @@
                 <input id="input-subtitle" type="text" class="popup__input" name="profile-subtitle" placeholder="О себе">
                 <button type="submit" class="popup__send-button">Сохранить</button>
             </form>
-            <button type="button" class="popup__close-button"></button>
+            <button aria-label="Close popup button" type="button" class="popup__close-button"></button>
         </div>
     </div>
     <script src="scripts/script.js"></script>
