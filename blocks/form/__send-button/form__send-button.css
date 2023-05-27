@@ -1,4 +1,4 @@
-.popup__send-button {
+.form__send-button {
     background-color: var(--black-color);
     color: var(--white-color);
     border: none;
@@ -13,12 +13,12 @@
     transition: opacity 0.2s ease;
 }
 
-.popup__send-button:hover {
+.form__send-button:hover {
     opacity: 0.8;
 }
 
 @media screen and (max-width: 767px) {
-    .popup__send-button {
+    .form__send-button {
         font-size: 14px;
         line-height: 17px;
     }

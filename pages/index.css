@@ -28,11 +28,13 @@
 @import "../blocks/popup/popup.css";
 @import "../blocks/popup/_opened/popup_opened.css";
 @import "../blocks/popup/__container/popup__container.css";
-@import "../blocks/popup/__form/popup__form.css";
-@import "../blocks/popup/__title/popup__title.css";
-@import "../blocks/popup/__input/popup__input.css";
-@import "../blocks/popup/__send-button/popup__send-button.css";
 @import "../blocks/popup/__close-button/popup__close-button.css";
+/*form*/
+@import "../blocks/form/form.css";
+@import "../blocks/form/__title/form__title.css";
+@import "../blocks/form/__input/form__input.css";
+@import "../blocks/form/__send-button/form__send-button.css";
+@import "../blocks/form/_visible/form_visible.css";
 /*footer*/
 @import "../blocks/footer/footer.css";
 @import "../blocks/footer/__copyright/footer__copyright.css";

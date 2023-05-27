@@ -26,13 +26,16 @@ const initialCards = [
   ]; 
 
 const popup = document.querySelector('.popup');
-const popupForm = document.querySelector('.popup__form');
+const editProfileForm = document.querySelector('#edit-profile-form');
+const addElementForm = document.querySelector('#add-element-form');
+
 const popupCloseBtn = popup.querySelector('.popup__close-button');
-const nameInput = document.querySelector('.popup__input[name="profile-name"]');
-const subtitleInput = document.querySelector('.popup__input[name="profile-subtitle"]');
+const nameInput = editProfileForm.querySelector('.form__input[name="profile-name"]');
+const subtitleInput = editProfileForm.querySelector('.form__input[name="profile-subtitle"]');
 const name = document.querySelector('.profile__name');
 const subtitle = document.querySelector('.profile__subtitle');
 const editBtn = document.querySelector('.profile__edit-button');
+const addElementBtn = document.querySelector('.profile__add-button');
 
 function getValue () {
     nameInput.value = name.textContent;
@@ -45,6 +48,12 @@ function setValue () {
 
 function togglePopup () {
     popup.classList.toggle('popup_opened');
+    popup.querySelectorAll('.form').forEach((item) => {
+        item.classList.remove('form_visible');
+    });
+}
+function toggleVisibleForm (form) {
+    form.classList.toggle('form_visible');
 }
 function handleFormSubmit (evt) {
     evt.preventDefault();
@@ -55,9 +64,14 @@ function handleFormSubmit (evt) {
 editBtn.addEventListener('click', () => {
     getValue();
     togglePopup();
+    toggleVisibleForm(editProfileForm);
 });
+addElementBtn.addEventListener('click', () => {
+    togglePopup();
+    toggleVisibleForm(addElementForm);
+})
 popupCloseBtn.addEventListener('click', togglePopup);
-popupForm.addEventListener('submit', handleFormSubmit);
+editProfileForm.addEventListener('submit', handleFormSubmit);
 
 const elementTemplate = document.querySelector('#element-template').content; 
 const elementsContainer = document.querySelector('.elements__list');
@@ -69,7 +83,4 @@ initialCards.forEach((item) => {
     copyElement.querySelector('.element__image').alt = item.name;
     copyElement.querySelector('.element__title').textContent = item.name;
     elementsContainer.append(copyElement);
-    console.log(copyElement.querySelector('.element__image').getAttribute('src'),copyElement.querySelector('.element__title'));
-    console.log(elementsContainer);
-
 }) 

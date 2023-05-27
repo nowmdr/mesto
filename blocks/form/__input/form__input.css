@@ -1,4 +1,4 @@
-.popup__input {
+.form__input {
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     font-weight: 400;
@@ -6,6 +6,6 @@
     line-height: 17px;
     padding: 0 0 10px 0;
 }
-.popup__input:first-of-type {
+.form__input:first-of-type {
     margin-bottom: 30px;
 }
