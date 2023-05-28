@@ -55,9 +55,17 @@ function togglePopup () {
 function toggleVisibleForm (form) {
     form.classList.toggle('form_visible');
 }
-function handleFormSubmit (evt) {
+function editProfileInfo (evt) {
     evt.preventDefault();
     setValue();
+    togglePopup();
+}
+
+function addElement (evt) {
+    evt.preventDefault();
+    const placeInput = addElementForm.querySelector('.form__input[name="place-name"]').value;
+    const imgInput = addElementForm.querySelector('.form__input[name="image-url"]').value;
+    elementsContainer.prepend(newCard(placeInput, imgInput));
     togglePopup();
 }
 
@@ -71,16 +79,20 @@ addElementBtn.addEventListener('click', () => {
     toggleVisibleForm(addElementForm);
 })
 popupCloseBtn.addEventListener('click', togglePopup);
-editProfileForm.addEventListener('submit', handleFormSubmit);
+editProfileForm.addEventListener('submit', editProfileInfo);
+addElementForm.addEventListener('submit', addElement)
 
 const elementTemplate = document.querySelector('#element-template').content; 
 const elementsContainer = document.querySelector('.elements__list');
 
+function newCard (name, link) {
+    const copyElement = elementTemplate.querySelector('.element').cloneNode(true);
+    copyElement.querySelector('.element__image').src = link;
+    copyElement.querySelector('.element__image').alt = name;
+    copyElement.querySelector('.element__title').textContent = name;
+    return copyElement;
+}
 
 initialCards.forEach((item) => {
-    const copyElement = elementTemplate.querySelector('.element').cloneNode(true);
-    copyElement.querySelector('.element__image').src = item.link;
-    copyElement.querySelector('.element__image').alt = item.name;
-    copyElement.querySelector('.element__title').textContent = item.name;
-    elementsContainer.append(copyElement);
+    elementsContainer.append(newCard(item.name, item.link));
 }) 
