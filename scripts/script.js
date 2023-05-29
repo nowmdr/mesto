@@ -65,7 +65,7 @@ function addElement (evt) {
     evt.preventDefault();
     const placeInput = addElementForm.querySelector('.form__input[name="place-name"]').value;
     const imgInput = addElementForm.querySelector('.form__input[name="image-url"]').value;
-    elementsContainer.prepend(newCard(placeInput, imgInput));
+    elementsContainer.prepend(createCard(placeInput, imgInput));
     togglePopup();
 }
 
@@ -85,18 +85,24 @@ addElementForm.addEventListener('submit', addElement)
 const elementTemplate = document.querySelector('#element-template').content; 
 const elementsContainer = document.querySelector('.elements__list');
 
-function newCard (name, link) {
+function createCard (name, link) {
     const copyElement = elementTemplate.querySelector('.element').cloneNode(true);
     copyElement.querySelector('.element__image').src = link;
     copyElement.querySelector('.element__image').alt = name;
     copyElement.querySelector('.element__title').textContent = name;
+    
     const likeButton = copyElement.querySelector('.element__like-button');
+    const deleteButton = copyElement.querySelector('.element__delete-button');
     likeButton.addEventListener('click', () => {
       likeButton.classList.toggle('element__like-button_active');
+    })
+    deleteButton.addEventListener('click', () => {
+    
+      deleteButton.parentElement.remove();
     })
     return copyElement;
 }
 
 initialCards.forEach((item) => {
-    elementsContainer.append(newCard(item.name, item.link));
+    elementsContainer.append(createCard(item.name, item.link));
 }) 
