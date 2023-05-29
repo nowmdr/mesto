@@ -90,6 +90,10 @@ function newCard (name, link) {
     copyElement.querySelector('.element__image').src = link;
     copyElement.querySelector('.element__image').alt = name;
     copyElement.querySelector('.element__title').textContent = name;
+    const likeButton = copyElement.querySelector('.element__like-button');
+    likeButton.addEventListener('click', () => {
+      likeButton.classList.toggle('element__like-button_active');
+    })
     return copyElement;
 }
 
