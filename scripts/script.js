@@ -28,7 +28,6 @@ const initialCards = [
 const popup = document.querySelector('.popup');
 const editProfileForm = document.querySelector('#edit-profile-form');
 const addElementForm = document.querySelector('#add-element-form');
-
 const popupCloseBtn = popup.querySelector('.popup__close-button');
 const nameInput = editProfileForm.querySelector('.form__input[name="profile-name"]');
 const subtitleInput = editProfileForm.querySelector('.form__input[name="profile-subtitle"]');
@@ -36,6 +35,10 @@ const name = document.querySelector('.profile__name');
 const subtitle = document.querySelector('.profile__subtitle');
 const editBtn = document.querySelector('.profile__edit-button');
 const addElementBtn = document.querySelector('.profile__add-button');
+const figurePopup = popup.querySelector('.figure-popup');
+const elementTemplate = document.querySelector('#element-template').content; 
+const elementsContainer = document.querySelector('.elements__list');
+const popupContainer = popup.querySelector('.popup__container');
 
 function getValue () {
     nameInput.value = name.textContent;
@@ -51,9 +54,14 @@ function togglePopup () {
     popup.querySelectorAll('.form').forEach((item) => {
         item.classList.remove('form_visible');
     });
+    figurePopup.classList.remove('figure-popup_visible');
 }
-function toggleVisibleForm (form) {
-    form.classList.toggle('form_visible');
+function addVisibleForm (form) {
+  if (form.classList.contains('form')) {
+    form.classList.add('form_visible');
+  } else {
+    form.classList.add('figure-popup_visible');
+  }
 }
 function editProfileInfo (evt) {
     evt.preventDefault();
@@ -72,23 +80,31 @@ function addElement (evt) {
 editBtn.addEventListener('click', () => {
     getValue();
     togglePopup();
-    toggleVisibleForm(editProfileForm);
+    addVisibleForm(editProfileForm);
 });
 addElementBtn.addEventListener('click', () => {
     togglePopup();
-    toggleVisibleForm(addElementForm);
+    addVisibleForm(addElementForm);
 })
 popupCloseBtn.addEventListener('click', togglePopup);
 editProfileForm.addEventListener('submit', editProfileInfo);
 addElementForm.addEventListener('submit', addElement)
 
-const elementTemplate = document.querySelector('#element-template').content; 
-const elementsContainer = document.querySelector('.elements__list');
 
 function createCard (name, link) {
     const copyElement = elementTemplate.querySelector('.element').cloneNode(true);
-    copyElement.querySelector('.element__image').src = link;
-    copyElement.querySelector('.element__image').alt = name;
+    const elementImage =  copyElement.querySelector('.element__image');
+    elementImage.src = link;
+    elementImage.alt = name;
+    elementImage.addEventListener('click', () => {
+      figurePopup.querySelector('.figure-popup__img').src = link;
+      figurePopup.querySelector('.figure-popup__img').alt = name;
+      figurePopup.querySelector('.figure-popup__caption').textContent = name;
+      figurePopup.classList.add('figure-popup_visible');
+      togglePopup();
+      addVisibleForm(figurePopup);
+    })
+
     copyElement.querySelector('.element__title').textContent = name;
     
     const likeButton = copyElement.querySelector('.element__like-button');
@@ -97,7 +113,6 @@ function createCard (name, link) {
       likeButton.classList.toggle('element__like-button_active');
     })
     deleteButton.addEventListener('click', () => {
-    
       deleteButton.parentElement.remove();
     })
     return copyElement;

@@ -36,6 +36,11 @@
 @import "../blocks/form/__input/form__input.css";
 @import "../blocks/form/__send-button/form__send-button.css";
 @import "../blocks/form/_visible/form_visible.css";
+/* figure-popup */
+@import "../blocks/figure-popup/figure-popup.css";
+@import "../blocks/figure-popup/_visible/figure-popup_visible.css";
+@import "../blocks/figure-popup/__caption/figure-popup__caption.css";
+@import "../blocks/figure-popup/__img/figure-popup__img.css";
 /*footer*/
 @import "../blocks/footer/footer.css";
 @import "../blocks/footer/__copyright/footer__copyright.css";
