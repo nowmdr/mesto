@@ -1,10 +1,9 @@
 .popup__container {
     position: relative;
-    width: max-content;
-    height: max-content;
-    /* max-width: 75vw; */
-    /* max-height: 75vh; */
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    margin: 0 var(--container-spacing);
+    max-width: 430px;
 }

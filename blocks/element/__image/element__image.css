@@ -3,3 +3,7 @@
     object-fit: cover;
     cursor: pointer;
 }
+
+.element__image[alt] {
+    color: var(--white-color);
+}

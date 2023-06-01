@@ -3,3 +3,7 @@
     max-height: 75vh;
     object-fit: cover;
 }
+
+.figure-popup__img[alt] {
+    color: var(--white-color);
+}

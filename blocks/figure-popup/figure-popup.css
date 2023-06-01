@@ -1,5 +1,5 @@
 .figure-popup {
-    display: none;
+    display: flex;
     flex-direction: column;
     margin: 0;
 }

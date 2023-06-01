@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./pages/index.css">
+    <script defer src="scripts/script.js"></script>
     <title>Путешествия по России</title>
 </head>
 <body class="root">
@@ -29,20 +30,30 @@
     <footer class="footer">
         <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
     </footer>
-    <div class="popup">
+    <div class="popup popup_edit-profile">
         <div class="popup__container">
-            <form id="edit-profile-form" action="#" class="form">
+            <form action="#" class="form">
                 <h2 class="form__title">Edit profile</h2>
                 <input type="text" class="form__input" name="profile-name" placeholder="Name">
                 <input type="text" class="form__input" name="profile-subtitle" placeholder="About you">
                 <button type="submit" class="form__send-button">Save</button>
             </form>
+            <button aria-label="Close popup button" type="button" class="popup__close-button"></button>
+        </div>
+    </div>
+    <div class="popup popup_add-element">
+        <div class="popup__container">
             <form id="add-element-form" action="#" class="form">
                 <h2 class="form__title">Add place</h2>
                 <input type="text" class="form__input" name="place-name" placeholder="Title">
                 <input type="text" class="form__input" name="image-url" placeholder="Link">
                 <button type="submit" class="form__send-button">Save</button>
             </form>
+            <button aria-label="Close popup button" type="button" class="popup__close-button"></button>
+        </div>
+    </div>
+    <div class="popup popup_image">
+        <div class="popup__container popup__container_image">
             <figure class="figure-popup">
                 <img class="figure-popup__img">
                 <figcaption class="figure-popup__caption"></figcaption>
@@ -60,6 +71,5 @@
             <button aria-label="Delete button" type="button" class="element__delete-button"></button>
         </li>
     </template>
-    <script src="scripts/script.js"></script>
 </body>
 </html>
