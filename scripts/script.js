@@ -47,9 +47,6 @@ function closePopup(popup) {
 }
 function openPopup(popup) {
     popup.classList.add('popup_opened');
-    popup.querySelector('.popup__close-button').addEventListener('click', () => {
-        closePopup(popup);
-    });
 }
 function fillProfileEditFormInputs () {
     nameInput.value = name.textContent;
@@ -77,6 +74,15 @@ editBtn.addEventListener('click', () => {
 });
 addElementBtn.addEventListener('click', () => {
     openPopup(addElementPopup)
+});
+editProfilePopup.querySelector('.popup__close-button').addEventListener('click', () => {
+    closePopup(editProfilePopup);
+});
+addElementPopup.querySelector('.popup__close-button').addEventListener('click', () => {
+    closePopup(addElementPopup);
+})
+imagePopup.querySelector('.popup__close-button').addEventListener('click', () => {
+    closePopup(imagePopup);
 })
 editProfileForm.addEventListener('submit', editProfileInfo);
 addElementForm.addEventListener('submit', addElement)
