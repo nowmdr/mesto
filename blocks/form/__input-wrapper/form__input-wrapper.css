@@ -1,0 +1,7 @@
+.form__input-wrapper {
+    position: relative;
+    min-height: 68px;
+}
+/*.form__input-wrapper:first-of-type {*/
+/*    margin-bottom: 30px;*/
+/*}*/

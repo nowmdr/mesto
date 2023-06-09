@@ -47,7 +47,18 @@ function closePopup(popup) {
 }
 function openPopup(popup) {
     popup.classList.add('popup_opened');
+    popup.addEventListener('click', (evt) => {
+        if(evt.target.classList.contains('popup_opened')) {
+            closePopup(popup);
+        }
+    });
+    window.addEventListener('keydown', (evt) => {
+        if(evt.key === 'Escape') {
+            closePopup(popup);
+        }
+    });
 }
+
 function fillProfileEditFormInputs () {
     nameInput.value = name.textContent;
     subtitleInput.value = subtitle.textContent;
@@ -115,3 +126,6 @@ function createCard (name, link) {
 initialCards.forEach((item) => {
     elementsContainer.append(createCard(item.name, item.link));
 })
+
+fillProfileEditFormInputs();
+

@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./pages/index.css">
     <script defer src="scripts/script.js"></script>
+    <script defer src="scripts/validate.js"></script>
     <title>Путешествия по России</title>
 </head>
 <body class="root">
@@ -32,10 +33,16 @@
     </footer>
     <div class="popup popup_edit-profile">
         <div class="popup__container">
-            <form action="#" class="form">
+            <form action="#" class="form" novalidate>
                 <h2 class="form__title">Edit profile</h2>
-                <input type="text" class="form__input" name="profile-name" placeholder="Name">
-                <input type="text" class="form__input" name="profile-subtitle" placeholder="About you">
+                <div class="form__input-wrapper">
+                    <input required minlength="2" maxlength="40" id="profile-name-input" type="text" class="form__input" name="profile-name" placeholder="Name">
+                    <span class="form__error profile-name-input-error"></span>
+                </div>
+                <div class="form__input-wrapper">
+                    <input required minlength="2" maxlength="200" id="profile-subtitle-input" type="text" class="form__input" name="profile-subtitle" placeholder="About you">
+                    <span class="form__error profile-subtitle-input-error"></span>
+                </div>
                 <button type="submit" class="form__send-button">Save</button>
             </form>
             <button aria-label="Кнопка закрыть модальное окно" type="button" class="popup__close-button"></button>
@@ -43,10 +50,16 @@
     </div>
     <div class="popup popup_add-element">
         <div class="popup__container">
-            <form id="add-element-form" action="#" class="form">
+            <form id="add-element-form" action="#" class="form" novalidate>
                 <h2 class="form__title">Add place</h2>
-                <input type="text" class="form__input" name="place-name" placeholder="Title">
-                <input type="text" class="form__input" name="image-url" placeholder="Link">
+                <div class="form__input-wrapper">
+                    <input required minlength="2" maxlength="30" type="text" id="place-name-input" class="form__input" name="place-name" placeholder="Title">
+                    <span class="form__error place-name-input-error"></span>
+                </div>
+                <div class="form__input-wrapper">
+                    <input required id="image-url-input" type="url" class="form__input" name="image-url" placeholder="Link">
+                    <span class="form__error image-url-input-error"></span>
+                </div>
                 <button type="submit" class="form__send-button">Save</button>
             </form>
             <button aria-label="Кнопка закрыть модальное окно" type="button" class="popup__close-button"></button>

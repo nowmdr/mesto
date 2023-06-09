@@ -1,0 +1,8 @@
+.form__send-button_disabled,
+.form__send-button_disabled:hover {
+    background-color: transparent;
+    border: 1px solid var(--black-color);
+    color: var(--black-color);
+    opacity: 0.2;
+    cursor: default;
+}
