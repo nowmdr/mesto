@@ -58,11 +58,20 @@ const toggleButtonState = (inputList, buttonElement, formClasses) => {
     }
 };
 
+function checkValidityAfterSending(formElement, formClasses) {
+    const inputList = Array.from(formElement.querySelectorAll(formClasses.inputSelector));
+    inputList.forEach((inputElement) => {
+        let event = new Event("input");
+        inputElement.dispatchEvent(event);
+        hideInputError(formElement, inputElement, formClasses);
+    });
+}
+
 const enableValidation = (formClasses) => {
     const formList = Array.from(document.querySelectorAll(formClasses.formSelector));
     formList.forEach((formElement) => {
-        formElement.addEventListener('submit', function (evt) {
-            evt.preventDefault();
+        formElement.addEventListener('submit', () => {
+            checkValidityAfterSending(formElement, formClasses);
         });
         setEventListeners(formElement, formClasses);
     });
