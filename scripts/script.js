@@ -47,7 +47,12 @@ function editProfileInfo (evt) {
 }
 function addElement (evt) {
     evt.preventDefault();
-    elementsContainer.prepend(createCard(placeInput.value, imgInput.value));
+    const data = {
+        name: placeInput.value,
+        link: imgInput.value
+    }
+
+    elementsContainer.prepend(new Card(data, '#element-template').generateCard());
     addElementForm.reset();
     closePopup(addElementPopup);
 }
