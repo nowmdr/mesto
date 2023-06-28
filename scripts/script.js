@@ -1,5 +1,6 @@
 import Card from './card.js';
-import initialCards from './data.js';
+import FormValidator from './validate.js';
+import {initialCards, formClasses} from './data.js';
 
 const editProfilePopup = document.querySelector('.popup_edit-profile');
 const editProfileForm = editProfilePopup.querySelector('.form');
@@ -98,3 +99,5 @@ initialCards.forEach((item) => {
 
 fillProfileEditFormInputs();
 
+new FormValidator(formClasses, editProfileForm).enableValidation();
+new FormValidator(formClasses, addElementForm).enableValidation();

@@ -1,13 +1,4 @@
-const formClasses = {
-    formSelector: '.form',
-    inputSelector: '.form__input',
-    submitButtonSelector: '.form__send-button',
-    inactiveButtonClass: 'form__send-button_disabled',
-    inputErrorClass: 'form__input_type_error',
-    errorClass: 'form__error_visible'
-}
-
-class FormValidator {
+export default class FormValidator {
     constructor(formClasses, formElement) {
         this._formClasses = formClasses;
         this._formElement = formElement;
@@ -81,9 +72,3 @@ class FormValidator {
         });
     }
 }
-
-const forms = document.querySelectorAll(formClasses.formSelector);
-forms.forEach((formElement) => {
-    const formValidator = new FormValidator(formClasses, formElement);
-    formValidator.enableValidation();
-});

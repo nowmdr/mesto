@@ -25,4 +25,13 @@ const initialCards = [
     }
 ];
 
-export default initialCards;
+const formClasses = {
+    formSelector: '.form',
+    inputSelector: '.form__input',
+    submitButtonSelector: '.form__send-button',
+    inactiveButtonClass: 'form__send-button_disabled',
+    inputErrorClass: 'form__input_type_error',
+    errorClass: 'form__error_visible'
+}
+
+export { initialCards, formClasses }
