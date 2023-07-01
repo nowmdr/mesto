@@ -25,7 +25,7 @@ const initialCards = [
     }
 ];
 
-const formClasses = {
+const validationSettings = {
     formSelector: '.form',
     inputSelector: '.form__input',
     submitButtonSelector: '.form__send-button',
@@ -34,4 +34,4 @@ const formClasses = {
     errorClass: 'form__error_visible'
 }
 
-export { initialCards, formClasses }
+export { initialCards, validationSettings }
