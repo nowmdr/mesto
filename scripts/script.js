@@ -55,9 +55,7 @@ function addElement (evt) {
     closePopup(addElementPopup);
 }
 function closePopupByOverlay (evt) {
-    if(evt.target.classList.contains('popup_opened')) {
-        closePopup(evt.target);
-    }
+    closePopupByOverlay(evt)
 }
 editBtn.addEventListener('click', () => {
     fillProfileEditFormInputs();
@@ -82,9 +80,7 @@ imagePopup.querySelector('.popup__close-button').addEventListener('click', () =>
     closePopup(imagePopup);
 })
 imagePopup.addEventListener('click', (evt) => {
-    if(evt.target.classList.contains('popup_opened')) {
-        closePopup(evt.target);
-    }
+    closePopupByOverlay(evt)
 });
 editProfileForm.addEventListener('submit', editProfileInfo);
 addElementForm.addEventListener('submit', addElement);
