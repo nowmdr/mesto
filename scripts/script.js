@@ -1,4 +1,6 @@
 import Card from './Card.js';
+import Section from './Section.js';
+
 import FormValidator from './FormValidator.js';
 import {initialCards, validationSettings} from './data.js';
 
@@ -45,12 +47,22 @@ function editProfileInfo (evt) {
     fillProfileFields();
     closePopup(editProfilePopup);
 }
-function createCard (name, link) {
-    return new Card(name, link, '#element-template').generateCard();
+function createCard (data) {
+    const cardList = new Section({
+            data: data,
+            renderer: (item) => {
+                cardList.setItem(new Card(item.name, item.link, '#element-template').generateCard());
+            },
+        },
+    '.elements__list'
+    );
+cardList.renderItems();
 }
+
 function addElement (evt) {
     evt.preventDefault();
-    elementsContainer.prepend(createCard(placeInput.value, imgInput.value));
+    const inputsValues = [{name: placeInput.value, link: imgInput.value }];
+    createCard(inputsValues);
     addElementForm.reset();
     closePopup(addElementPopup);
 }
@@ -85,10 +97,7 @@ imagePopup.addEventListener('click', (evt) => {
 editProfileForm.addEventListener('submit', editProfileInfo);
 addElementForm.addEventListener('submit', addElement);
 
-
-initialCards.forEach((item) => {
-    elementsContainer.append(createCard(item.name, item.link, '#element-template'));
-})
+createCard(initialCards);
 
 fillProfileEditFormInputs();
 
