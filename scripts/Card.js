@@ -1,10 +1,11 @@
-import { openPopup, imagePopup } from "./script.js";
+import { imagePopup } from "./script.js";
 
 export default class Card {
-    constructor (name, link, templateSelector) {
+    constructor ({handleCardClick}, name, link, templateSelector) {
         this._name = name;
         this._link = link;
         this._templateSelector = templateSelector;
+        this._handleCardClick = handleCardClick;
         this._image = imagePopup.querySelector('.figure-popup__img');
         this._imageCaption = imagePopup.querySelector('.figure-popup__caption');
     }
@@ -45,7 +46,7 @@ export default class Card {
         });
 
         this._elementImage.addEventListener('click', () => {
-            this._handleImageClick();
+          this._handleCardClick(this._link, this._name);
         });
       }
 
@@ -55,12 +56,5 @@ export default class Card {
 
       _handleDeleteButtonClick() {
         this._element.remove();
-      }
-
-      _handleImageClick() {
-        this._image.src = this._link;
-        this._image.alt = this._name;
-        this._imageCaption.textContent = this._name;
-        openPopup(imagePopup);
       }
 }
