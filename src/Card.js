@@ -1,13 +1,9 @@
-import { imagePopup } from "./script.js";
-
 export default class Card {
     constructor ({handleCardClick}, name, link, templateSelector) {
         this._name = name;
         this._link = link;
         this._templateSelector = templateSelector;
         this._handleCardClick = handleCardClick;
-        this._image = imagePopup.querySelector('.figure-popup__img');
-        this._imageCaption = imagePopup.querySelector('.figure-popup__caption');
     }
 
     _getElement() {
@@ -32,7 +28,7 @@ export default class Card {
         this._element.querySelector('.element__title').textContent = this._name;
 
         this._setEventListeners();
-
+        
         return this._element;
       }
 

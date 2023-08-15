@@ -8,7 +8,7 @@ const initialCards = [
         link: 'https://images.unsplash.com/photo-1682930458825-f9eb4cb65a72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80'
     },
     {
-        name: 'Bialowieza Forest',
+        name: 'Bialowierza Forest',
         link: 'https://images.unsplash.com/photo-1630677867586-c89f86ab3334?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80'
     },
     {
@@ -34,4 +34,4 @@ const validationSettings = {
     errorClass: 'form__error_visible'
 }
 
-export { initialCards, validationSettings }
+export { initialCards, validationSettings };
