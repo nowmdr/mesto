@@ -2,7 +2,7 @@
   "name": "place",
   "version": "0.0.1",
   "description": "pet project",
-  "main": "index.js",
+  "main": "./pages/index.js",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve"

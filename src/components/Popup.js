@@ -1,6 +1,5 @@
 export default class Popup {
     constructor(selector) {
-        console.log(selector);
       this._popup = document.querySelector(selector);
       this._popupCloseButton = this._popup?.querySelector('.popup__close-button');
     }
@@ -13,13 +12,11 @@ export default class Popup {
 
 
     closePopup() {
-        console.log('Remove listeners');
         this._popup.classList.remove('popup_opened');
         this._removeEventListeners();
     }
 
     _setEventListeners() {
-        console.log('Set listeners');
         document.addEventListener('keydown', (evt) => {
             this._handleEscClose(evt);
         });

@@ -15,7 +15,7 @@
     </header>
     <main class="content">
         <section class="profile">
-            <img src="<%=require('../images/profile-image.jpg')%>" alt="Жак-Ив Кусто" class="profile__avatar">
+            <img src="<%=require('./images/profile-image.jpg')%>" alt="Жак-Ив Кусто" class="profile__avatar">
             <div class="profile__info">
                 <h1 class="profile__name">Жак-Ив Кусто</h1>
                 <p class="profile__subtitle">Исследователь океана</p>
@@ -32,7 +32,7 @@
     </footer>
     <div class="popup popup_edit-profile">
         <div class="popup__container">
-            <form action="#" class="form" novalidate>
+            <form id="edit-profile-form" action="#" class="form" novalidate>
                 <h2 class="form__title">Edit profile</h2>
                 <div class="form__input-wrapper">
                     <input required minlength="2" maxlength="40" id="profile-name-input" type="text" class="form__input" name="profile-name" placeholder="Name">
