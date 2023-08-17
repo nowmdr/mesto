@@ -18,10 +18,15 @@ const imgInput = addElementForm.querySelector('.form__input[name="image-url"]');
 const editBtn = document.querySelector('.profile__edit-button');
 const addElementBtn = document.querySelector('.profile__add-button');
 
+function imagePopup(link, name) {
+    const newPopup = new PopupWithImage(link, name, '.popup_image');
+    return newPopup;
+}
+
 function createNewCard(name, link) {
     const card = new Card({
         handleCardClick: (link, name) => {
-            new PopupWithImage(link, name, '.popup_image').openPopup();
+           imagePopup(link, name).openPopup();
         }
     }, name, link, '#element-template');
 
