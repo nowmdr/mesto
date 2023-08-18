@@ -13,7 +13,11 @@ export default class PopupWithForm extends Popup {
     }
 
     _getInputValues() {
-        return Array.from(this._form.querySelectorAll('.form__input'));
+        const inputs = Array.from(this._form.querySelectorAll('.form__input'));
+        return {
+            name: inputs[0].value,
+            linkOrDescription: inputs[1].value
+        }
     }
 
     _handleFormSubmit(evt) {

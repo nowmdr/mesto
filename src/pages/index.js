@@ -19,14 +19,14 @@ const addElementBtn = document.querySelector('.profile__add-button');
 const imagePopup = new PopupWithImage('.popup_image');
 const userInfo = new UserInfo({name:'.profile__name', info:'.profile__subtitle'});
 const addElementFormPopup = new PopupWithForm({
-    changeData: (array) => {
-        cardList.setItem(createNewCard(array[0].value, array[1].value));
+    changeData: ({name, linkOrDescription}) => {
+        cardList.setItem(createNewCard(name, linkOrDescription));
     }
 },'.popup_add-element');
 
 const editProfileFormPopup = new PopupWithForm({
-    changeData: (array) => {
-        userInfo.setUserInfo(array[0].value, array[1].value);
+    changeData: ({name, linkOrDescription}) => {
+        userInfo.setUserInfo(name, linkOrDescription);
     }
 },'.popup_edit-profile');
 const cardList = new Section({
