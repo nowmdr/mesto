@@ -10,8 +10,8 @@ import {initialCards, validationSettings} from '../data/data.js';
 
 const editProfileForm = document.querySelector('#edit-profile-form');
 const addElementForm = document.querySelector('#add-element-form');
-const nameInput = editProfileForm.querySelector('.form__input[name="profile-name"]');
-const subtitleInput = editProfileForm.querySelector('.form__input[name="profile-subtitle"]');
+const nameInput = editProfileForm.querySelector('.form__input[name="profileName"]');
+const subtitleInput = editProfileForm.querySelector('.form__input[name="profileSubtitle"]');
 
 const editBtn = document.querySelector('.profile__edit-button');
 const addElementBtn = document.querySelector('.profile__add-button');
@@ -19,14 +19,14 @@ const addElementBtn = document.querySelector('.profile__add-button');
 const imagePopup = new PopupWithImage('.popup_image');
 const userInfo = new UserInfo({name:'.profile__name', info:'.profile__subtitle'});
 const addElementFormPopup = new PopupWithForm({
-    changeData: ({name, linkOrDescription}) => {
-        cardList.setItem(createNewCard(name, linkOrDescription));
+    changeData: ({placeName, imageUrl}) => {
+        cardList.setItem(createNewCard(placeName, imageUrl));
     }
 },'.popup_add-element');
 
 const editProfileFormPopup = new PopupWithForm({
-    changeData: ({name, linkOrDescription}) => {
-        userInfo.setUserInfo(name, linkOrDescription);
+    changeData: ({profileName, profileSubtitle}) => {
+        userInfo.setUserInfo(profileName, profileSubtitle);
     }
 },'.popup_edit-profile');
 const cardList = new Section({
