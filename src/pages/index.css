@@ -10,6 +10,8 @@
 /*profile*/
 @import "../blocks/profile/profile.css";
 @import "../blocks/profile/__avatar/profile__avatar.css";
+@import "../blocks/profile/__avatar-img/profile__avatar-img.css";
+@import "../blocks/profile/__avatar-edit-button/profile__avatar-edit-button.css";
 @import "../blocks/profile/__info/profile__info.css";
 @import "../blocks/profile/__edit-button/profile__edit-button.css";
 @import "../blocks/profile/__add-button/profile__add-button.css";
@@ -25,6 +27,8 @@
 @import "../blocks/element/__like-button/element__like-button.css";
 @import "../blocks/element/__like-button/_active/element__like-button_active.css";
 @import "../blocks/element/__delete-button/element__delete-button.css";
+@import "../blocks/element/__delete-button/_hidden/element__delete-button_hidden.css";
+@import "../blocks/element/__like-counter/element__like-counter.css";
 /*popup*/
 @import "../blocks/popup/popup.css";
 @import "../blocks/popup/_opened/popup_opened.css";
@@ -46,6 +50,10 @@
 @import "../blocks/figure-popup/figure-popup.css";
 @import "../blocks/figure-popup/__caption/figure-popup__caption.css";
 @import "../blocks/figure-popup/__img/figure-popup__img.css";
+/*confirmation*/
+@import "../blocks/confirmation/confirmation.css";
+@import "../blocks/confirmation/__title/confirmation__title.css";
+@import "../blocks/confirmation/__confirm-button/confirmation__confirm-button.css";
 /*footer*/
 @import "../blocks/footer/footer.css";
 @import "../blocks/footer/__copyright/footer__copyright.css";
