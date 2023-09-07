@@ -3,7 +3,6 @@ import Card from '../components/Card.js';
 import Section from '../components/Section.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import PopupWithForm from '../components/PopupWithForm.js';
-import PopupWithEditAvatarForm from '../components/PopupWithEditAvatarForm';
 import PopupWithConfirmation from '../components/PopupWithConfirmation.js';
 import UserInfo from '../components/UserInfo.js';
 import FormValidator from '../components/FormValidator.js';
@@ -34,26 +33,34 @@ Promise.all([api.getUserInfo(),api.getInitialCards()])
         userInfo.setUserAvatar(profile.avatar);
         cardList.renderItems(cards);
     })
+    .catch(error => {
+        console.log(error.status);
+    })
 
 const imagePopup = new PopupWithImage('.popup_image');
-const editAvatarPopup = new PopupWithEditAvatarForm({
+const editAvatarPopup = new PopupWithForm({
     changeData: ({avatarUrl}) => {
         loaderStart(editAvatarForm)
         api.changeAvatar(avatarUrl)
-            .then((data)=>{
+        .then((data)=>{
             userInfo.setUserAvatar(data.avatar);
+            editAvatarPopup.close();
+            loaderEnd(editAvatarForm);
         })
-            .finally(()=>{
-                editAvatarPopup.close();
-                loaderEnd(editAvatarForm)
-            })
+        .catch(error => {
+            console.log(error.status);
+        })
     }
 },'.popup_edit-avatar');
 const confirmDeleteElementPopup = new PopupWithConfirmation({
     handleConfirmationButtonClick: (card) => {
-        api.deleteCard(card.cardId).then(() => {
+        api.deleteCard(card.cardId)
+        .then(() => {
             card.deleteCard();
             confirmDeleteElementPopup.close();
+        })
+        .catch(error => {
+            console.log(error.status);
         })
     }
 },'.popup_delete-element');
@@ -62,13 +69,14 @@ const addElementFormPopup = new PopupWithForm({
     changeData: ({placeName, imageUrl}) => {
         loaderStart(addElementForm);
         api.addNewCard(placeName, imageUrl)
-            .then((data) => {
+        .then((data) => {
             cardList.setItem(createNewCard(data, userInfo.getUserInfo().id));
+            addElementFormPopup.close();
+            loaderEnd(addElementForm);
         })
-            .finally(()=>{
-                loaderEnd(addElementForm);
-                addElementFormPopup.close();
-            })
+        .catch(error => {
+            console.log(error.status);
+        })
     }
 },'.popup_add-element');
 
@@ -76,17 +84,17 @@ const editProfileFormPopup = new PopupWithForm({
     changeData: ({profileName, profileSubtitle}) => {
         loaderStart(editProfileForm);
         api.changeUserInfo(profileName, profileSubtitle)
-            .then(({name, about})=>{
+        .then(({name, about})=>{
             userInfo.setUserInfo(name, about);
+            loaderEnd(editProfileForm);
+            editProfileFormPopup.close();
         })
-            .finally(()=>{
-                loaderEnd(editProfileForm);
-                editProfileFormPopup.close();
-            })
+        .catch(error => {
+            console.log(error.status);
+        })
     }
 },'.popup_edit-profile');
 const cardList = new Section({
-    // data: initialCards,
     renderer: (item) => {
         cardList.setItem(createNewCard(item, userInfo.getUserInfo().id));
     },
@@ -103,9 +111,13 @@ function createNewCard(data, userId) {
         }
     }, {
         handleLikeButtonClick: (card) => {
-            api.toggleLike(card.cardId, card.cardHaveLike).then((data) => {
+            api.toggleLike(card.cardId, card.cardHaveLike)
+            .then((data) => {
                 card.toggleLikeStatus();
                 card.updateLikesCounter(data.likes.length);
+            })
+            .catch(error => {
+                console.log(error.status);
             })
         }
     }, data, userId, '#element-template');
@@ -127,8 +139,9 @@ addElementBtn.addEventListener('click', () => {
 });
 
 editBtn.addEventListener('click', () => {
-    nameInput.value = userInfo.getUserInfo().name;
-    subtitleInput.value = userInfo.getUserInfo().info;
+    const userData = userInfo.getUserInfo();
+    nameInput.value = userData.name;
+    subtitleInput.value = userData.info;
     editProfileFormPopup.open();
 });
 

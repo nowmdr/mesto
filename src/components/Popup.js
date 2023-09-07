@@ -6,13 +6,11 @@ export default class Popup {
         this._handleOverlayClose = this._handleOverlayClose.bind(this);
         this._popupCloseHandler = this.close.bind(this);
     }
-    
-  
+
     open() {
         this._popup.classList.add('popup_opened');
         this._setEventListeners();
     }
-
 
     close() {
         this._popup.classList.remove('popup_opened');

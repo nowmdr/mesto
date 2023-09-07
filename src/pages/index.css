@@ -50,10 +50,6 @@
 @import "../blocks/figure-popup/figure-popup.css";
 @import "../blocks/figure-popup/__caption/figure-popup__caption.css";
 @import "../blocks/figure-popup/__img/figure-popup__img.css";
-/*confirmation*/
-@import "../blocks/confirmation/confirmation.css";
-@import "../blocks/confirmation/__title/confirmation__title.css";
-@import "../blocks/confirmation/__confirm-button/confirmation__confirm-button.css";
 /*footer*/
 @import "../blocks/footer/footer.css";
 @import "../blocks/footer/__copyright/footer__copyright.css";
