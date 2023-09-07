@@ -15,13 +15,8 @@ export default class PopupWithConfirmation extends Popup {
         this._handleConfirmationButtonClick(this.card);
     }
 
-    _setEventListeners() {
-        super._setEventListeners();
+    setEventListeners() {
+        super.setEventListeners();
         this._popup.addEventListener('submit', this._confirmDelete);
-    }
-
-    _removeEventListeners() {
-        super._removeEventListeners();
-        this._popup.removeEventListener('submit', this._confirmDelete);
     }
 }
